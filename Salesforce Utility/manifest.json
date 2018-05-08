@@ -1,0 +1,47 @@
+{
+  "manifest_version": 2,
+
+  "name": "Salesforce Utility",
+  "description": "One stop shop for Salesforce Developers",
+  "version": "1.0",
+
+  "icons": {
+    "16": "/media/images/icons/logo.png"
+  },
+
+  "browser_action": {
+    "default_icon": "/media/images/icons/logo.png",
+    "default_popup": "pages/popup.html"
+  },
+
+  "background": {
+    "scripts": ["js/BackgroundScript.js"],
+    "persistent": false
+  },
+  "content_scripts": [
+    {
+      "css":[
+        "styles/main.css"
+      ],
+      "matches": [
+                "https://*.force.com/*",
+                "https://*.salesforce.com/*",
+                "https://*.cloudforce.com/*",
+                "http://*.screencast.com/*"
+                ],
+      "js": ["js/contentScript.js"]
+    }
+  ],
+  "permissions": [    
+          "https://*.force.com/*",
+          "https://*.salesforce.com/*",
+          "https://*.cloudforce.com/*",
+          "notifications",
+          "contextMenus",
+          "activeTab",
+          "tabs",
+          "clipboardRead",
+          "storage",
+          "<all_urls>"
+        ]
+}
