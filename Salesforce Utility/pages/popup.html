@@ -1,183 +1,77 @@
 <!DOCTYPE html>
+
 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-<style type="text/css">
-	.popupContainer{
-		border: 3px solid;
-		webkit-box-sizing: content-box;
-		  -moz-box-sizing: content-box;
-		  box-sizing: content-box;
-		  border: none;
-		  font: normal 16px/1 "Times New Roman", Times, serif;
-		  color: black;
-		  -o-text-overflow: ellipsis;
-		  text-overflow: ellipsis;
-			}
-	.enjoy-css {
-  		-
-	}
-	#sUtil-popupDiv{
-		
-		padding:0px;
-	}
-	#sUtil-Search{
-		padding:5px;
-		height: 20%;
-		width:max-content;
-	}
-	#sUtil-searchBox{
-		border:1px solid lightgrey;
-		border-radius: 4%;
-		font: 200 12.00px Adamina;
-    	color: grey;
-	}
-	#sUtil-Header, #sUtil-Footer, #sUtil-Body {
-		padding:5px;	
+<link href='https://fonts.googleapis.com/css?family=Adamina' rel='stylesheet'>
+<link rel="stylesheet" href="/styles/popup.css">
 
-	}
-	#sUtil-Header-p, #sUtil-Footer-p, #sUtil-Body-p{
-		margin:0px; 
-		font: 200 16.00px Adamina; 
-		text-align: center
-	}
-	#sUtil-Footer-p{
-		font: 150 10.00px Adamina;
-		color:grey;
-	}
-	#sUtil-settings{		
-		font: 200 12.00px Adamina;
-		width:fit-content;
-		background-color: transparent;
-    	border: none;
-    	color:grey;
-	}
-	#sUtil-aboutUs{		
-		font: 150 10.00px Adamina;
-		width:100%;
-		background-color: transparent;
-    	border: none;
-    	color:grey;
-	}
-	hr{
-		margin:2px;
-	}
-	.tg {
-    border-collapse:collapse;
-    border-spacing:0;
-    border-color:#ccc;
-	}
-	 .tg td{
-	    font-family:Arial, sans-serif;
-	    font-size:14px;
-	    padding:5px;
-	    border-style:solid;
-	    border-width:0px;
-	    overflow:hidden;
-	    word-break:normal;
-	    border-top-width:1px;
-	    border-bottom-width:1px;
-	    border-color:#ccc;
-	    color:#333;
-	    background-color:#fff;
-	}
-	 .tg th{
-	    font-family:Arial, sans-serif;
-	    font-size:14px;
-	    font-weight:normal;
-	    padding:5px 20px;
-	    border-style:solid;
-	    border-width:0px;
-	    overflow:hidden;
-	    word-break:normal;
-	    border-top-width:1px;
-	    border-bottom-width:1px;
-	    border-color:#ccc;
-	    color:#333;
-	    background-color:#f0f0f0;
-	}
-	 .tg .tg-s6z2{
-	    text-align:center
-	}
-	 .tg .tg-baqh{
-	    text-align:center;
-	    vertical-align:top
-	}
-	 .tg .tg-yw4l{
-	    vertical-align:top
-	}
-	 .tg .tg-b7b8{
-	    background-color:#f9f9f9;
-	    vertical-align:top
-	}
-
-	button[class^="sUtil-popup-button"]{
-		background-color:  transparent;
-	    border: none;
-    	text-align: left;
-	}
-	a{
-		color : black;
-		text-decoration: none;
-	}
-</style>
 <html >
 <head>
 	<title>Search Salesforce</title>
-	<link href='https://fonts.googleapis.com/css?family=Adamina' rel='stylesheet'>
-
 </head>
 <body >
 	<div id="sUtil-popupDiv">
 		<div id="sUtil-Search">
 			<input type="String" name="sUtil-searchBox" id="sUtil-searchBox"  placeholder="Search">
-			<button type="button" id="sUtil-settings">Settings</button>
+			<button type="button"  class="sUtil-header-button sUtil-button"  id="sUtil-settings">Settings</button>
+			<button  class="sUtil-header-button sUtil-button" >New</button>
 		</div>
 		<hr>
 		<div id="sUtil-Header">
 			<p id="sUtil-Header-p">Salesforce Utility</p>
+			<div id="sUtil-warningBox">
+				<div id = "sUtil-warningBox-warning">
+					This is an error message !!
+				</div>
+				<div id = "sUtil-warningBox-action">
+					<button type="button"  class="sUtil-warningBox-button sUtil-button"  id="sUtil-warningBox-confirm">confirm</button>
+					<button type="button"  class="sUtil-warningBox-button sUtil-button"  id="sUtil-warningBox-cancel">cancel</button>
+				</div>
+			</div>
 		</div>
 		<hr>
-		<div id="sUtil-Body">			
+		<div id="sUtil-Body">
 			<div id="sUtil-Body-orgList">
 				<table class="tg" id="orgTable">
 				</table>
 			</div>
-			<div id="sUtil-Body-editBox">
+			<div id="sUtil-Body-editBox"  style="width: -webkit-fill-available; display: none">
 			<hr style="margin: 8px 0px;">
-				<table class="tg" id="editEntry" style="width: -webkit-fill-available">										
+				<table class="tg" id="editEntry" style="width: -webkit-fill-available">
 					<tr>
 						<th>
 							Edit Info
-						</th>						
+						</th>
 						<th class="tg-yw4l">
-							 <button class="sUtil-popup-button" >Cancel</button>
-							 <button class="sUtil-popup-button" >Save</button>	
-							 <button class="sUtil-popup-button" ><i class="fas fa-trash-alt"></i></button>			    	
+							 <button class="sUtil-popup-button" id="sUtil-edit-button-undo"><i class="fas fa-undo"></i></button>
+							 <button class="sUtil-popup-button" id="sUtil-edit-button-save"><i class="far fa-save"></i></button>
+							 <button class="sUtil-popup-button" id="sUtil-edit-button-hide"><i class="fas fa-eye"></i></button>
+							 <button class="sUtil-popup-button" id="sUtil-edit-button-delete"><i class="fas fa-trash-alt"></i></button>
 						</th>
 					</tr>
-					<tr>	
+					<tr>
 						<td class="tg-b7b8">Nick</td>
-						<td class="tg-b7b8"><input type="String" name="sUtil-edit-nick" id="sUtil-edit-nick"  placeholder="Nick"></td>	
+						<td class="tg-b7b8"><input type="String" name="sUtil-edit-nick" id="sUtil-edit-nick" placeholder="Nick" datatag="nick"></td>
 					</tr>
 					<tr>
 						<td class="tg-b7b8">Username</td>
-						<td class="tg-b7b8"><input type="String" name="sUtil-edit-username" id="sUtil-edit-username"  placeholder="Username"></td>
+						<td class="tg-b7b8"><input type="String" name="sUtil-edit-username" id="sUtil-edit-username"  placeholder="Username" datatag="username"></td>
 					</tr>
-					<tr>	
+					<tr>
 						<td class="tg-b7b8">Password</td>
-						<td class="tg-b7b8"><input type="password" name="sUtil-edit-password" id="sUtil-edit-password"  placeholder="Password"></td>	
-					</tr>					
-					<tr>	
+						<td class="tg-b7b8"><input type="password" name="sUtil-edit-password" id="sUtil-edit-password"  placeholder="Password" datatag="password"></td>
+					</tr>
+					<tr>
 						<td class="tg-b7b8">Org Type</td>
-						<td class="tg-b7b8"><input type="String" name="sUtil-edit-type" id="sUtil-edit-type"  placeholder="Org Type"></td>	
+						<td class="tg-b7b8"><input type="String" name="sUtil-edit-type" id="sUtil-edit-type"  placeholder="Org Type" datatag="orgtype"></td>
 					</tr>
 				</table>
-			</div>	
+			</div>
 		</div>
 		<hr>
-		<div id="sUtil-Footer">			
+		<div id="sUtil-Footer">
 			<p id="sUtil-Footer-p"> (C) Prashant Gupta, 2018</p>
 			<button type="button" id="sUtil-aboutUs">About Us</button>
-		</div>		
+		</div>
 	</div>
 </body>
 

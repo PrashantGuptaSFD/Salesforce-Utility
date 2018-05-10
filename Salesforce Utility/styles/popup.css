@@ -1,0 +1,129 @@
+body{
+	font: 200 12.00px Adamina;
+}
+.popupContainer{
+	border: 3px solid;
+	webkit-box-sizing: content-box;
+	  -moz-box-sizing: content-box;
+	  box-sizing: content-box;
+	  border: none;
+	  font: normal 16px/1 "Times New Roman", Times, serif;
+	  color: black;
+	  -o-text-overflow: ellipsis;
+	  text-overflow: ellipsis;
+		}
+.enjoy-css {
+		-
+}
+#sUtil-popupDiv{
+
+	padding:0px;
+}
+#sUtil-Search{
+	padding:5px;
+	height: 20%;
+	text-align: right;
+}
+#sUtil-searchBox{
+	border:1px solid lightgrey;
+	border-radius: 4%;
+	font: 200 12.00px Adamina;
+	color: grey;
+}
+#sUtil-Header, #sUtil-Footer, #sUtil-Body {
+	padding:5px;
+
+}
+#sUtil-Header-p, #sUtil-Footer-p, #sUtil-Body-p{
+	margin:0px;
+	font: 200 16.00px Adamina;
+	text-align: center
+}
+#sUtil-Footer-p{
+	font: 150 10.00px Adamina;
+	color:grey;
+}
+.sUtil-button {
+	font: 200 12.00px Adamina;
+	width:fit-content;
+	background-color: transparent;
+	border: none;
+	color:grey;
+	padding: 1px 2px;
+}
+#sUtil-aboutUs{
+	font: 150 10.00px Adamina;
+	width:100%;
+	background-color: transparent;
+	border: none;
+	color:grey;
+}
+hr{
+	margin:2px;
+}
+.tg {
+border-collapse:collapse;
+border-spacing:0;
+border-color:#ccc;
+}
+ .tg td{
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    padding:5px;
+    border-style:solid;
+    border-width:0px;
+    overflow:hidden;
+    word-break:normal;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    border-color:#ccc;
+    color:#333;
+    background-color:#fff;
+}
+ .tg th{
+    font-family:Arial, sans-serif;
+    font-size:14px;
+    font-weight:normal;
+    padding:5px 20px;
+    border-style:solid;
+    border-width:0px;
+    overflow:hidden;
+    word-break:normal;
+    border-top-width:1px;
+    border-bottom-width:1px;
+    border-color:#ccc;
+    color:#333;
+    background-color:#f0f0f0;
+}
+ .tg .tg-s6z2{
+    text-align:center
+}
+ .tg .tg-baqh{
+    text-align:center;
+    vertical-align:top
+}
+ .tg .tg-yw4l{
+    vertical-align:top
+}
+ .tg .tg-b7b8{
+    background-color:#f9f9f9;
+    vertical-align:top
+}
+
+button[class^="sUtil-popup-button"]{
+	background-color:  transparent;
+    border: none;
+	text-align: left;
+}
+a{
+	color : black;
+	text-decoration: none;
+}
+#sUtil-warningBox{
+	color: #ff0d0d;
+  border: 1px dashed #ff5555;
+  text-align: center;
+}
+.sUtil-warningBox-button{
+	color: #ff0d0d;
+}
