@@ -1,0 +1,13 @@
+#SavePasswordContainer{
+	visibility: hidden;
+	z-index: 9999999;
+    display: flex;
+    position: fixed;
+    top: 0px;
+    right: 0px;	
+}
+.sUtil-popup-button{
+	background-color:  transparent;
+    border: none; 
+    color:white;
+}
